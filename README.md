@@ -1,13 +1,14 @@
 AutoForm Wizard
 =============
 
-AutoForm Wizard is a multi step form component for AutoForm.
+AutoForm Wizard is a multi step form component for AutoForm (based on the work of forwarder).
+https://github.com/forwarder/meteor-wizard.git
 
 
 ## Installation
 
 ```
-$ meteor add forwarder:autoform-wizard
+$ meteor add craphtex:autoform-wizard
 ```
 
 ## Upgrade notice
@@ -20,15 +21,6 @@ See the [Using routers](#routers) section to see how to enable it.
 ## Dependencies
 
 * AutoForm versions 5.
-
-
-## Example
-
-A running example can be found here:
-http://autoform-wizard.meteor.com
-
-The source code of the example app can be found on Github.
-https://github.com/forwarder/meteor-wizard-example
 
 
 ## Basic usage
