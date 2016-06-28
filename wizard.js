@@ -1,5 +1,6 @@
 var wizardsById = {};
 var defaultId = '_defaultId';
+var loadingSessionVariableName = '__wizard_loading';
 
 Template.registerHelper('pathForStep', function(id) {
   var activeStep = this.wizard.activeStep(false);
@@ -216,6 +217,7 @@ Wizard.prototype = {
   },
 
   next: function(data) {
+    Session.set(loadingSessionVariableName, true);
     var activeIndex = _.indexOf(this._stepsByIndex, this._activeStepId);
 
     if(data) {
@@ -223,9 +225,11 @@ Wizard.prototype = {
     }
 
     this.show(activeIndex + 1);
+    Session.set(loadingSessionVariableName, false);
   },
 
   previous: function(data) {
+    Session.set(loadingSessionVariableName, true);
     var activeIndex = _.indexOf(this._stepsByIndex, this._activeStepId);
 
     if(data) {
@@ -233,6 +237,7 @@ Wizard.prototype = {
     }
 
     this.show(activeIndex - 1);
+    Session.set(loadingSessionVariableName, false);
   },
 
   show: function(id) {
